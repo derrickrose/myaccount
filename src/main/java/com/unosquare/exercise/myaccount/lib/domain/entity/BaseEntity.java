@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /**
+ * Used to force having both of the methods inside all entity.
  * @author frils
  *
  * @param <T>

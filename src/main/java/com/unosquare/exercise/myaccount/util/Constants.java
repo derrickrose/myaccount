@@ -1,6 +1,7 @@
 package com.unosquare.exercise.myaccount.util;
 
 /**
+ * All constants should be initialized here.
  * @author frils
  *
  */

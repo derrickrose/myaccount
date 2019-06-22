@@ -5,6 +5,7 @@ import com.unosquare.exercise.myaccount.lib.domain.repository.UnosquareRepositor
 import org.springframework.stereotype.Repository;
 
 /**
+ * Used for the interaction with data base.
  * @author frils
  *
  */

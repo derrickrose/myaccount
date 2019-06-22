@@ -7,6 +7,7 @@ import com.unosquare.exercise.myaccount.lib.facade.UnosquareFacade;
 import java.util.List;
 
 /**
+ * Superclass for each service.
  * @author frils
  *
  * @param <T>

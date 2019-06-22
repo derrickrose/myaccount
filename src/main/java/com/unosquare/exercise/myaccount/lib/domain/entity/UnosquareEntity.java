@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * Superclass for all entity.
  * @author frils
  *
  */

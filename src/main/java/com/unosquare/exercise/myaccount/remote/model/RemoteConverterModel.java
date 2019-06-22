@@ -7,6 +7,7 @@ import lombok.ToString;
 import java.util.Map;
 
 /**
+ * Mapping object for the remote connection to exchange rate api.
  * @author frils
  *
  */

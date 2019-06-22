@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 /**
+ * Used to get the exchange rate value with a given currency.
  * @author frils
  *
  */

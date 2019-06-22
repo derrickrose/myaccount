@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * Model for pin change.
  * @author frils
  *
  */

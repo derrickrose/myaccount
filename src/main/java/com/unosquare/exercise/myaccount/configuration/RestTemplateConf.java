@@ -9,6 +9,7 @@ import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.web.client.RestTemplate;
 /**
+ * Configuration for RestTemplate.
  * @author frils
  *
  */

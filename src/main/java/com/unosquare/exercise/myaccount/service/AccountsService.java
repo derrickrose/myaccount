@@ -3,17 +3,17 @@ package com.unosquare.exercise.myaccount.service;
 import com.unosquare.exercise.myaccount.domain.entity.Account;
 import com.unosquare.exercise.myaccount.domain.entity.Balance;
 import com.unosquare.exercise.myaccount.domain.entity.User;
+import com.unosquare.exercise.myaccount.exception.UnexpectedException;
 import com.unosquare.exercise.myaccount.facade.AccountsFacade;
 import com.unosquare.exercise.myaccount.lib.service.UnosquareService;
 import com.unosquare.exercise.myaccount.remote.service.ExchangesService;
 import com.unosquare.exercise.myaccount.web.model.AccountCreationModel;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
 import java.util.Date;
 import java.util.function.Consumer;
 
@@ -22,8 +22,9 @@ import static com.unosquare.exercise.myaccount.web.model.AccountCreationModel.cr
 
 
 /**
- * @author frils
+ * Business logic for Account.
  *
+ * @author frils
  */
 @Service
 public class AccountsService extends UnosquareService<Account> {
@@ -39,19 +40,30 @@ public class AccountsService extends UnosquareService<Account> {
     private ExchangesService exchangesService;
 
     @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
     public AccountsService(AccountsFacade accountsFacade) {
         super(accountsFacade);
         this.accountsFacade = accountsFacade;
     }
 
-
+    /**
+     * @param user information to update.
+     * @param id   account identifier (account number).
+     * @return updated account.
+     */
     public Account update(User user, Long id) {
         Account account = this.getAccount(id);
         account.setUser(user);
         return (super.update(account)).withTransactions(transactionsService.getLatest5Transactions(id));
     }
 
-
+    /**
+     * @param id       account id.
+     * @param currency given currency.
+     * @return account detail with converted currency.
+     */
     public Account getAccountWithTargetCurrency(@PathVariable Long id, @PathVariable String currency) {
         Account account = getAccount(id);
         Balance balance = account.getBalance();
@@ -67,24 +79,34 @@ public class AccountsService extends UnosquareService<Account> {
         return account;
     }
 
-    public ResponseEntity<Account> save(AccountCreationModel accountModel) {
+    /**
+     * @param accountModel model used for account creation.
+     * @return created account.
+     */
+    public Account save(AccountCreationModel accountModel) {
         Account account = creationModelToAccount.apply(accountModel);
+        account = encryptPin(account);
         setCreationDate.accept(account);
-        account = super.save(account);
-
-        if (account == null) return ResponseEntity.noContent().build();
-
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(account.getId())
-                .toUri();
-
-        return ResponseEntity.created(location).body(account.withTransactions(transactionsService.getLatest5Transactions(account.getId())));
+        return super.save(account);
     }
 
+    /**
+     * @param id account identifier (account number).
+     * @return account.
+     */
     public Account getAccount(Long id) {
         return accountsFacade.getAccount(id).withTransactions(transactionsService.getLatest5Transactions(id));
+    }
+
+    private Account encryptPin(Account account) {
+        if (StringUtils.isBlank(account.getPin()) || !account.getPin().matches("\\d{4}"))
+            throw new UnexpectedException("Pin should be 4 digits.");
+
+        if (account.getPin().matches("0000")) {
+            throw new UnexpectedException("Pin should not be 0000.");
+        }
+        account.setPin(passwordEncoder.encode(account.getPin()));
+        return account;
     }
 
 

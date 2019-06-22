@@ -8,6 +8,7 @@ import com.unosquare.exercise.myaccount.lib.service.UnosquareService;
 import java.util.List;
 
 /**
+ * Superclass for each REST controller.
  * @author frils
  *
  * @param <T>

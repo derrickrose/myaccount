@@ -10,6 +10,7 @@ import java.util.Optional;
 
 
 /**
+ * Superclass for all facade.
  * @author frils
  *
  * @param <T>

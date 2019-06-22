@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import java.time.LocalDateTime;
 
 /**
+ * Used to format response object on error.
  * @author frils
  *
  */

@@ -14,7 +14,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 /**
- * @author frils
+ * Used to force custom response object format on error.
+ *  @author frils
  *
  */
 @Order(Ordered.HIGHEST_PRECEDENCE)

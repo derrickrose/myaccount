@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
+ * Custom response object while encountering any exception.
  * @author frils
  *
  */

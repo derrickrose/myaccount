@@ -13,8 +13,9 @@ import java.util.function.Function;
 import static com.unosquare.exercise.myaccount.util.TransactionType.getDefault;
 
 /**
- * @author frils
+ * Model INPUT for transaction.
  *
+ * @author frils
  */
 @Getter
 @Setter
@@ -29,6 +30,8 @@ public class TransactionModel {
     private String description;
 
     private String currency;
+
+    private String pin;
 
     public static final Function<TransactionModel, Optional<Transaction>> fromModelToTransaction = (transactionModel -> {
 

@@ -4,6 +4,8 @@ import com.unosquare.exercise.myaccount.exception.UnexpectedException;
 import lombok.Getter;
 
 /**
+ * Enumeration that list all type of transaction, might be deposit, withdraw.
+ * Should perform debit, and check too.
  * @author frils
  *
  */

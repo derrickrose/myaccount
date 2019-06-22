@@ -33,6 +33,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 
 /**
+ * Configuration for HttpClient which is used to connect to a link.
  * @author frils
  *
  */
