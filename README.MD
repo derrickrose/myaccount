@@ -47,6 +47,8 @@ http://localhost:8080/swagger-ui.html
 CURL EXAMPLES
 -------------------------------------------------------------------------------------------
 * to create a new account
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  "firstName": "frelin","idNumber": "7150145","lastName": "ampilahy", "pin": "5654" }' 'http://localhost:8080/accounts'
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  "firstName": "frelin","idNumber": "7150145","lastName": "ampilahy", "pin": "7895" }' 'http://localhost:8080/accounts'
 
 
+* to perform a deposit
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  "accountId": 1,  "amount": 2, "currency": "eur",  "description": "string", "pin": "7895", "transactionType": "deposit" }' 'http://localhost:8080/transactions'
