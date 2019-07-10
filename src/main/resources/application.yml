@@ -8,7 +8,7 @@ spring:
     name: myaccount
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://myaccount.ck59tgcgtpm1.sa-east-1.rds.amazonaws.com/postgres-local?createDatabaseIfNotExist=true
+    url: jdbc:postgresql://myaccount.ck59tgcgtpm1.sa-east-1.rds.amazonaws.com/fampilahy?createDatabaseIfNotExist=true
     username: fampilahy
     password: Slirf1111?
     hikari:
