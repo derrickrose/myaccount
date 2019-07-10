@@ -63,7 +63,7 @@ public class AccountsController extends UnosquareController<Account> {
     }
 
     @ApiOperation(value = "Shows account details while converting its currency.")
-    @GetMapping(value = "/{id}/targetcurrency/{currency}")
+    @GetMapping(value = "/{id}/targetCurrency/{currency}")
     public Account getAccountWithTargetCurrency(@PathVariable Long id, @PathVariable String currency) {
         return accountsService.getAccountWithTargetCurrency(id, currency);
     }

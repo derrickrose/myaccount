@@ -36,13 +36,13 @@ public class TransactionsController extends UnosquareController<Transaction> {
     }
 
     @ApiOperation(value = "Lists all transactions made by a given account with a given currency.")
-    @GetMapping("/account/{accountId}/sourcecurrency/{currency}")
+    @GetMapping("/account/{accountId}/sourceCurrency/{currency}")
     public List<Transaction> getTransactionsByAccountIdAndSourceCurrency(@PathVariable Long accountId, @PathVariable String currency) {
         return transactionsService.getTransactionsByAccountIdAndSourceCurrency(accountId, currency);
     }
 
     @ApiOperation(value = "Lists all transactions and change to a given currency.")
-    @GetMapping("/account/{accountId}/targetcurrency/{currency}")
+    @GetMapping("/account/{accountId}/targetCurrency/{currency}")
     public List<Transaction> getTransactionsByAccountIdAndTargetCurrency(@PathVariable Long accountId, @PathVariable String currency) {
         return transactionsService.getTransactionsByAccountIdAndTargetCurrency(accountId, currency);
     }
