@@ -51,4 +51,13 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 * to perform a deposit
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  "accountId": 1,  "amount": 2, "currency": "eur",  "description": "string", "pin": "7895", "transactionType": "deposit" }' 'http://localhost:8080/transactions'
 
-
+------------------------------------------------------------------------------------------------------
+TODO
+------------------------------------------------------------------------------------------------------
+* handling of security
+* separate parent project 
+* handling of logging
+* handling of error
+* add code-style
+* fix bug on unit-test
+* CI/CD with jenkins and AWS
