@@ -1,5 +1,5 @@
 myaccount
-----------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 myaccount is an api that provide :
 * account creation / deletion
 * transaction like deposit / withdraw with your preferred currency
@@ -11,9 +11,9 @@ DEPENDENCIES
 uses maven for dependency handling and uses spring boot for easy bootstrap
 * Swagger2 is implemented to perform documentation of the api
 
---------------------------------------------------------------------------------------------------------
-HOW TO RUN
----------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+PACKAGING
+------------------------------------------------------------------------------------------------------
 * first clone project from github
 https://github.com/derrickrose/myaccount.git
 
@@ -25,26 +25,26 @@ in my case the welcome prompt shows frils@boss:~/Documents/perso/projects/myacco
 
 * to build the project, enter the following command and note a BUILD SUCCESS
 '$ mvn clean install'
+> To skip the tests use: -DskipTests
 
-* to extract the fat-jar into directory-separated dependencies directories
+* to extract the fat-jar into directory-separated dependencies
 '$ mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)'
- 
 
-
-
-
-
-* to run the project, enter the following command an note that the application is started
-java -jar target/myaccount-0.0.1-SNAPSHOT.jar
-
-* now open any browser and surf the documentation link powered by swagger2
+ ------------------------------------------------------------------------------------------------------
+ RUNNING
+ ------------------------------------------------------------------------------------------------------
+* to run 
+'$ docker-compose build && docker-compose up'
+> Application listens on port 8080
+>
+* to verify the application is running, open any browser and surf the documentation link powered by swagger2
 http://localhost:8080/swagger-ui.html
 
-* the application can be tested using swagger or postman or curl
+* the application can be tested using swagger-ui, postman, http or curl
 
----------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 CURL EXAMPLES
--------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 * to create a new account
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  "firstName": "frelin","idNumber": "7150145","lastName": "ampilahy", "pin": "7895" }' 'http://localhost:8080/accounts'
 
