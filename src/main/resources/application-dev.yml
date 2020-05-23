@@ -6,11 +6,6 @@
 spring:
   application:
     name: myaccount
-  profiles:
-    active : qa
-currency:
-  converter:
-    url: https://api.exchangeratesapi.io/latest?base=
 #  datasource:
 #    driver-class-name: org.postgresql.Driver
 #    url: jdbc:postgresql://myaccount.ck59tgcgtpm1.sa-east-1.rds.amazonaws.com/fampilahy?createDatabaseIfNotExist=true
@@ -25,4 +20,6 @@ currency:
 ##    hibernate:
 #    ddl-auto: create-drop
 #    database-platform: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 1515
 

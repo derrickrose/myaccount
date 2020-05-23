@@ -3,6 +3,7 @@ package com.unosquare.exercise.myaccount.service;
 import com.unosquare.exercise.myaccount.domain.entity.Account;
 import com.unosquare.exercise.myaccount.domain.entity.User;
 import com.unosquare.exercise.myaccount.web.model.AccountCreationModel;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import static org.hamcrest.Matchers.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Ignore
 public class AccountsServiceTest {
 
     @Autowired
