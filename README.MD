@@ -1,36 +1,38 @@
-# myaccount
+myaccount
 ----------------------------------------------------------------------------------------
 myaccount is an api that provide :
 * account creation / deletion
 * transaction like deposit / withdraw with your preferred currency
 
-
-
-
 ------------------------------------------------------------------------------------------------------
-# DEPENDENCIES
+DEPENDENCIES
 ------------------------------------------------------------------------------------------------------
 * The application runs with java 8 or higher,
 uses maven for dependency handling and uses spring boot for easy bootstrap
 * Swagger2 is implemented to perform documentation of the api
 
-
-
-
 --------------------------------------------------------------------------------------------------------
-# HOW TO RUN
+HOW TO RUN
 ---------------------------------------------------------------------------------------------
-* first clone project from git
+* first clone project from github
 https://github.com/derrickrose/myaccount.git
 
 * point path inside project directory, in my case as an example I am using ubuntu
-cd Documents/perso/projects/myaccount
+'$ cd Documents/perso/projects/myaccount'
 
 * be sure the path is pointing inside the application directory
 in my case the welcome prompt shows frils@boss:~/Documents/perso/projects/myaccount$
 
 * to build the project, enter the following command and note a BUILD SUCCESS
-mvn clean install
+'$ mvn clean install'
+
+* to extract the fat-jar into directory-separated dependencies directories
+'$ mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)'
+ 
+
+
+
+
 
 * to run the project, enter the following command an note that the application is started
 java -jar target/myaccount-0.0.1-SNAPSHOT.jar
@@ -40,15 +42,13 @@ http://localhost:8080/swagger-ui.html
 
 * the application can be tested using swagger or postman or curl
 
-
-
-
 ---------------------------------------------------------------------------------------------------------------
 CURL EXAMPLES
 -------------------------------------------------------------------------------------------
 * to create a new account
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  "firstName": "frelin","idNumber": "7150145","lastName": "ampilahy", "pin": "7895" }' 'http://localhost:8080/accounts'
 
-
 * to perform a deposit
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{  "accountId": 1,  "amount": 2, "currency": "eur",  "description": "string", "pin": "7895", "transactionType": "deposit" }' 'http://localhost:8080/transactions'
+
+

@@ -6,20 +6,20 @@
 spring:
   application:
     name: myaccount
-#  datasource:
-#    driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://myaccount.ck59tgcgtpm1.sa-east-1.rds.amazonaws.com/fampilahy?createDatabaseIfNotExist=true
-#    username: fampilahy
-#    password: Slirf1111?
-#    hikari:
-#      maximum-pool-size: 3
-#    driverClassName: org.postgresql.Driver
-#  jpa:
-#    generate-ddl: true
-#    show-sql: true
-##    hibernate:
-#    ddl-auto: create-drop
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
-server:
-  port: 1515
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql//localhost:5432/postgres
+    username: postgres
+    password: postgres
+    #    hikari:
+    #      maximum-pool-size: 3
+    driverClassName: org.postgresql.Driver
+  jpa:
+    generate-ddl: true
+    #    show-sql: true
+    ##    hibernate:
+    #    ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+server:
+  port: 8080
