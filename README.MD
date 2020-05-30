@@ -61,3 +61,4 @@ TODO
 * add code-style
 * fix bug on unit-test
 * CI/CD with jenkins and AWS
+* CID/CD with jenkins and openshift

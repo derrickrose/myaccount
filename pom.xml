@@ -36,7 +36,6 @@
         <java.version>1.8</java.version>
     </properties>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -72,13 +71,11 @@
             <scope>compile</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>2.1.1.RELEASE</version>
         </dependency>
-
 
         <dependency>
             <groupId>io.springfox</groupId>
@@ -103,13 +100,11 @@
             <version>1.2.17</version>
         </dependency>
 
-
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.9</version>
         </dependency>
-
 
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
@@ -130,30 +125,10 @@
         </dependency>
 
 <!--        <dependency>-->
-<!--            <groupId>com.h2database</groupId>-->
-<!--            <artifactId>h2</artifactId>-->
-<!--            <scope>runtime</scope>-->
+<!--            <groupId>org.postgresql</groupId>-->
+<!--            <artifactId>postgresql</artifactId>-->
+<!--            <scope>compile</scope>-->
 <!--        </dependency>-->
-
-
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>compile</scope>
-        </dependency>
-
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-security</artifactId>-->
-        <!--        </dependency>-->
-
-        <!-- JWT -->
-
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-hateoas</artifactId>-->
-        <!--        </dependency>-->
-
 
         <!--		<dependency>-->
         <!--			<groupId>org.springframework.boot</groupId>-->
@@ -168,7 +143,6 @@
         <!--            <scope>compile</scope>-->
         <!--        </dependency>-->
 
-
     </dependencies>
     <build>
         <plugins>
@@ -178,6 +152,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

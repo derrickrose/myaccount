@@ -7,7 +7,7 @@ spring:
   application:
     name: myaccount
   profiles:
-    active : dev
+    active : local
 currency:
   converter:
     url: https://api.exchangeratesapi.io/latest?base=

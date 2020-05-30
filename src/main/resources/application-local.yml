@@ -1,0 +1,10 @@
+#################################################
+#                                               #
+# THIS IS A CONFIG FOR AWS POSTGRES CONNECTION  #
+#                                               #
+#################################################
+spring:
+  application:
+    name: myaccount
+server:
+  port: 8080
